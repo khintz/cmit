@@ -1,6 +1,9 @@
-// #include <iostream>
-// using namespace std;
+#include <iostream>
+#include <assert.h>
+#include "cmit.hpp"
 
-int add (int a, int b) {
+using namespace cmit;
+
+int cmit::add (int a, int b) {
     return (a + b);
 }

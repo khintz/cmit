@@ -5,7 +5,6 @@ swig_add_library(pycmit
   LANGUAGE python
   OUTPUT_DIR ${CMAKE_BINARY_DIR}/python/${PYTHON_PROJECT}/cmit
   SOURCES cmit.i)
-
 target_include_directories(pycmit
   PRIVATE
   ../include

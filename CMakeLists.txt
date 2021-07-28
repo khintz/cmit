@@ -76,7 +76,7 @@ endif()
 
 # By default only the ortools C++ library is built.
 option(BUILD_CXX "Build C++ library" ON)
-option(BUILD_PYTHON "Build Python Library" OFF)
+option(BUILD_PYTHON "Build Python Library" ON)
 message(STATUS "Build C++ library: ${BUILD_CXX}")
 message(STATUS "Build Python: ${BUILD_PYTHON}")
 

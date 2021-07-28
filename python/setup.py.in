@@ -1,5 +1,13 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from setuptools import find_packages, setup
 from setuptools.dist import Distribution
+
+from distutils.command.build import build as build_orig
+from distutils.core import setup, Extension
+from setuptools import setup, Extension
+import numpy
 
 class BinaryDistribution(Distribution):
   def is_pure(self):
@@ -12,6 +20,8 @@ class InstallPlatlib(install):
     def finalize_options(self):
         install.finalize_options(self)
         self.install_lib=self.install_platlib
+
+        
 
 setup(
   name='@PYTHON_PROJECT@',

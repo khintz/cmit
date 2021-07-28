@@ -60,6 +60,7 @@ endfunction()
 # Look for required python modules
 search_python_module(setuptools)
 search_python_module(wheel)
+search_python_module(numpy)
 
 # setup.py.in contains cmake variable e.g. @PYTHON_PROJECT@ and
 # generator expression e.g. $<TARGET_FILE_NAME:pycmit>
@@ -99,7 +100,7 @@ add_custom_target(python_package ALL
     python/setup.py
     python/${PYTHON_PROJECT}/__init__.py
     python/${PYTHON_PROJECT}/cmit/__init__.py
-  COMMAND ${CMAKE_COMMAND} -E remove_directory dist
+  # COMMAND ${CMAKE_COMMAND} -E remove_directory dist
   COMMAND ${CMAKE_COMMAND} -E make_directory ${PYTHON_PROJECT}/.libs
   COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:pycmit> ${PYTHON_PROJECT}/cmit
 
