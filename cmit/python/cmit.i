@@ -1,3 +1,22 @@
+%module cmit
+%{
+  #define SWIG_FILE_WITH_INIT
+  #include "cmit.hpp"
+%}
+
+%include "numpy.i"
+
+%init %{
+  import_array();
+%}
+
+%apply (double* IN_ARRAY1, int DIM1) {(double* seq, int n)};
+
+%include "cmit.hpp"
+
+
+
+
 // %module cmit
 
 // // #if defined(SWIGPYTHON)
@@ -42,22 +61,3 @@
 
 //   /* Parse the heade file to generate wrappers */
 //   %include "cmit.hpp"
-
-
-%module cmit
-
-%{
-  #define SWIG_FILE_WITH_INIT
-  #include "cmit.hpp"
-%}
-
-%include "numpy.i"
-
-%init %{
-  import_array();
-%}
-
-//%apply (double* IN_ARRAY1, int DIM1) {(double* input_array, int length)};
-%apply (double* IN_ARRAY1, int DIM1) {(double* input_array, int length)};
-
-%include "cmit.hpp"

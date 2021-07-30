@@ -4,13 +4,11 @@ add_library(cmit "")
 target_sources(cmit
   PRIVATE
     include/cmit.hpp
-    src/cmit.cpp
-    src/pressure.cpp)
+    src/cmit.cxx)
 target_include_directories(cmit
   PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>
-    /home/kah/miniconda3/envs/py37/lib/python3.7/site-packages/numpy/core/include
     )
 target_compile_features(cmit PUBLIC cxx_std_11)
 set_target_properties(cmit PROPERTIES

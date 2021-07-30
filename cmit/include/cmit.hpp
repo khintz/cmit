@@ -1,18 +1,17 @@
 #ifndef CMIT_H
 #define CMIT_H
+#include <stdio.h>
 #include <iostream>
 #include <vector>
-#include <assert.h>
-
 
 #define CMIT_VERSION "0.1"
 #define __version__ CMIT_VERSION
 
 namespace cmit {
 
-    typedef std::vector<int> ivec;
-    typedef std::vector<float> fvec;
-    typedef std::vector<double> dvec;
+    // typedef std::vector<int> ivec;
+    // typedef std::vector<float> fvec;
+    // typedef std::vector<double> dvec;
 
     /** Mathematical constant pi */
     static const float pi = 3.14159265;
@@ -38,11 +37,10 @@ namespace cmit {
      *  @param h Height above sea level [m]
      *  @return Surface Pressure [hPa]
      */
-    //fvec netatmo_pressure_correction (fvec p0, fvec h);
-    double netatmo_pressure_correction (double* p0, double* h);
+    // fvec netatmo_pressure_correction (fvec p0, fvec h);
 
-    //float ps_to_slp (float ps, float H, float T, float RH=-1.0, float Td=-1.0);
-    double sum_array(double* input_array, int length);
+    double rms (double* seq, int n);
+
 }
 
 #endif
